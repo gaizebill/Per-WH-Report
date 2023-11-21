@@ -15,8 +15,6 @@ st.set_page_config(layout="wide")
 
 CLAIM_SECRETS = st.secrets["CLAIM_SECRETS"]
 CLIENT_LIST = st.secrets["CLIENTS"]
-#SHEET_KEY = st.secrets["SHEET_KEY"]
-#SHEET_ID = st.secrets["SHEET_ID"]
 API_URL = st.secrets["API_URL"]
 FILE_BUFFER = io.BytesIO()
 
@@ -76,8 +74,8 @@ def get_report(option="Today", start_=None, end_=None) -> pandas.DataFrame:
         end_date=start_date + datetime.timedelta(days=6)
         start_ = start_date.strftime("%Y-%m-%d")
         end_ = end_date.strftime("%Y-%m-%d")
-        #start_ = "2023-06-26"
-        #end_ = "2023-07-02"
+        #start_ = "2023-11-20"
+        #end_ = "2023-11-27"
         today = datetime.datetime.now(timezone(client_timezone))
         date_from_offset = datetime.datetime.fromisoformat(start_).astimezone(
             timezone(client_timezone)) - datetime.timedelta(days=1)
